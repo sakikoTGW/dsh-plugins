@@ -1,0 +1,45 @@
+name: 本仓库问题
+description: 索引错漏、链接失效、文档问题、CI 或脚本问题
+title: "[hub] "
+labels: ["hub"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这里只处理本仓库（索引、文档、约定、CI）。插件本身坏了，请去插件仓库 Issue；
+        `dsh-element-picker` 独立仓库整理中，暂时走本仓库的「维护请求」模板。
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题类型
+      options:
+        - 索引条目错误（catalog.json 字段 / 版本 / 状态）
+        - 链接失效
+        - 文档表述问题
+        - README 与 catalog.json 不一致
+        - CI 或脚本问题
+        - 其他（在下面说明）
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: 位置
+      description: 文件 + 行号 / 段落；或插件名 + 哪一列
+      placeholder: 例如：README.md 的「状态含义」表第 3 行；或 catalog.json 里 dsh-element-picker 的 version
+    validations:
+      required: true
+  - type: textarea
+    id: expectation
+    attributes:
+      label: 期望怎么改
+      description: 一句话说清改成什么；有替代链接或正确版本号就贴上
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 证据（可选）
+      description: 截图、命令输出、可复现的链接
+    validations:
+      required: false

@@ -1,0 +1,62 @@
+name: 新插件建议 / 自荐
+description: 想让我做一个新插件，或你自己想做一个并希望被收录
+title: "[idea] "
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本仓库只做索引与约定，不写插件源码。先写清楚问题，再谈方案；一个问题一个 Issue。
+        规则见 [CONTRIBUTING.md](https://github.com/sakikoTGW/dsh-plugins/blob/main/CONTRIBUTING.md)。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的具体日常问题
+      description: 哪一步每天都在浪费时间？现在怎么绕过去的？
+      placeholder: 例如：每次要让模型改页面上某个按钮，都得用一段文字描述位置，还要来回确认它指的是哪一个。
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: 现在怎么绕过
+      description: 目前的做法、用的其他工具，或者干脆忍着
+      placeholder: 例如：截图 + 手动复制选择器；或者放弃，自己改代码。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+      description: 做到什么程度算解决？写出可验收的标准（目标 / 验收标准 / 非目标）
+      placeholder: |
+        目标：……
+        验收标准：……
+        非目标：……
+    validations:
+      required: true
+  - type: dropdown
+    id: willing_pr
+    attributes:
+      label: 是否愿意提 PR
+      options:
+        - 愿意，代码我来写
+        - 愿意，但需要指导
+        - 不愿意，只提需求
+    validations:
+      required: true
+  - type: input
+    id: plugin_name
+    attributes:
+      label: 插件名 / 包名（可选）
+      description: 有想法就填；本仓库约定包名形如 dsh-xxx
+      placeholder: dsh-xxx
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充（可选）
+      description: 截图、参考实现、类似插件链接
+    validations:
+      required: false

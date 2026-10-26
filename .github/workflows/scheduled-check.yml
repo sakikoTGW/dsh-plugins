@@ -1,0 +1,54 @@
+name: scheduled-check
+
+on:
+  schedule:
+    # 每周一 03:00 UTC（北京时间 11:00）核对 npm dist-tags 与 GitHub 仓库可达性
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  online-check:
+    name: catalog online check (npm / GitHub)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 在线校验 catalog（npm dist-tags + GitHub API）
+        env:
+          # 可选：提高 GitHub API 限额；公开仓库可达性检查有默认 token 就够
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/check.mjs --online
+
+      - name: 失败时开 issue 记录
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          date_utc="$(date -u +%Y-%m-%d)"
+          run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          body="$(mktemp)"
+          {
+            echo '## catalog 在线校验失败'
+            echo
+            echo '- 失败命令：`node scripts/check.mjs --online`'
+            echo "- 日期（UTC）：${date_utc}"
+            echo "- 触发方式：${GITHUB_EVENT_NAME}（每周一 03:00 UTC 定时 / 手动 workflow_dispatch）"
+            echo "- 运行记录：${run_url}"
+            echo
+            echo '请按运行日志定位：npm dist-tags.latest 与 catalog version 不一致，或 GitHub 仓库不可达。修复后关闭本 Issue。'
+          } > "$body"
+          gh issue create \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "catalog 在线校验失败（${date_utc}）" \
+            --body-file "$body"

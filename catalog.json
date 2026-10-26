@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "owner": "sakikoTGW",
+  "home": "https://github.com/sakikoTGW/dsh-plugins",
+  "maintainer": "sakikoTGW",
+  "updated": "2026-10-27",
+  "categories": [
+    {
+      "id": "input",
+      "title": "输入与引用",
+      "blurb": "把说不清的东西变成可点的引用，少解释一句。"
+    },
+    {
+      "id": "tooling",
+      "title": "安装与开发",
+      "blurb": "让装插件、改插件这件事少踩坑。"
+    }
+  ],
+  "plugins": [
+    {
+      "id": "element-picker",
+      "name": "dsh-element-picker",
+      "title": "元素 / 链接引用芯片",
+      "category": "input",
+      "status": "live",
+      "summary": "把元素、链接、文件路径变成输入框里的引用芯片，模型不用再猜「你说的是哪个」",
+      "problem": "想让模型改页面上某个按钮、引用某条链接或某个文件路径时，只能用一段文字去描述，模型经常指错地方。",
+      "repo": null,
+      "npm": "dsh-element-picker",
+      "version": "0.2.1",
+      "install": "dsh plugin --profile <profile> add dsh-element-picker",
+      "engines": {
+        "dsh": ">=0.2.0-rc.2 <0.3.0",
+        "node": ">=20"
+      },
+      "license": "MIT",
+      "since": "2026-10",
+      "feedback": "本仓库「维护请求」Issue（独立仓库开源后转到仓库 Issue）"
+    },
+    {
+      "id": "plugin-resolver",
+      "name": "dsh-plugin-resolver",
+      "title": "插件安装助手",
+      "category": "tooling",
+      "status": "live",
+      "summary": "一次工具调用把插件装对：搜目录、同名消歧、按当前内核选兼容版本、装完校验",
+      "problem": "手工装插件要拉目录、猜同名来源、试版本、踩 npm 超时，最后还不知道装没装上；agent 侧约 45 步、20 分钟以上。",
+      "repo": "https://github.com/sakikoTGW/dsh-plugin-resolver",
+      "npm": "dsh-plugin-resolver",
+      "version": "0.1.2",
+      "install": "dsh plugin --profile <profile> add dsh-plugin-resolver",
+      "engines": {
+        "dsh": ">=0.2.0-rc.2 <0.3.0",
+        "node": ">=20"
+      },
+      "license": "MIT",
+      "since": "2026-10",
+      "feedback": "https://github.com/sakikoTGW/dsh-plugin-resolver/issues"
+    }
+  ]
+}

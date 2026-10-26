@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 讨论区 Discussions
+    url: https://github.com/sakikoTGW/dsh-plugins/discussions
+    about: 用法提问、想法交流、还没想清楚该不该做的东西。
+  - name: dsh-plugin-resolver Issues
+    url: https://github.com/sakikoTGW/dsh-plugin-resolver/issues
+    about: dsh-plugin-resolver 的 bug、行为不对、功能需求，走它自己的仓库。
+  - name: dsh-element-picker npm 包页
+    url: https://www.npmjs.com/package/dsh-element-picker
+    about: 独立仓库整理中，当前版本以 npm 包页为准；反馈先走本仓库的维护请求模板。

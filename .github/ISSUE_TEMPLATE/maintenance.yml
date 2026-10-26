@@ -1,0 +1,75 @@
+name: 维护请求 / 催更
+description: 某个插件需要修、需要更新，或者想催一个时间点
+title: "[maintenance] "
+labels: ["maintenance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        用于催更、维护请求、版本更新。插件的 bug 复现优先去插件仓库 Issue（`dsh-plugin-resolver` 有独立仓库）；
+        `dsh-element-picker` 独立仓库整理中，暂时走这里。
+        规则见 [CONTRIBUTING.md](https://github.com/sakikoTGW/dsh-plugins/blob/main/CONTRIBUTING.md)。
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: 哪个插件
+      options:
+        - dsh-element-picker
+        - dsh-plugin-resolver
+        - 本仓库本身（索引 / 文档 / CI）
+        - 其他（在下面说明）
+    validations:
+      required: true
+  - type: input
+    id: plugin_version
+    attributes:
+      label: 插件版本
+      description: npm 上看到的版本号；没装或不确定就写「不确定」
+      placeholder: 例如 0.2.1
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: 影响程度
+      options:
+        - 阻塞：完全用不了
+        - 严重：主要功能坏了，但有绕法
+        - 一般：体验问题
+        - 建议：不算问题，只是想要
+    validations:
+      required: true
+  - type: input
+    id: expect_time
+    attributes:
+      label: 期望时间
+      description: 你希望什么时候有结果；没有硬期限写「不急」
+      placeholder: 例如 两周内 / 下个版本 / 不急
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体情况
+      description: 现象、复现步骤、日志或截图；催更就写清卡在哪
+      placeholder: |
+        1. ……
+        2. ……
+        期望：……；实际：……
+    validations:
+      required: true
+  - type: input
+    id: dsh_version
+    attributes:
+      label: DSH 版本（可选）
+      description: 你正在用的内核版本，方便对照插件的 engines.dsh
+      placeholder: 例如 0.2.0-rc.2
+    validations:
+      required: false
+  - type: textarea
+    id: references
+    attributes:
+      label: 补充（可选）
+      description: 相关 Issue、讨论、版本链接
+    validations:
+      required: false

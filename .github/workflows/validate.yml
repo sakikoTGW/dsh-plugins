@@ -1,0 +1,32 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: catalog / README / tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 仓库零依赖（package.json 没有 dependencies/devDependencies），不需要 npm install。
+      # verify = check（schema + README 一致）+ render --check（渲染结果逐字节比对）+ node --test test/
+      - name: npm run verify
+        run: npm run verify

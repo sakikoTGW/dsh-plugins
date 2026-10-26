@@ -1,0 +1,23 @@
+{
+  "name": "dsh-plugins",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Index of sakikoTGW's DeepSeek Harness plugins: one repo per plugin, one hub for the catalog, the conventions and the feedback loop.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "check:online": "node scripts/check.mjs --online",
+    "render": "node scripts/render.mjs",
+    "test": "node --test test/",
+    "verify": "npm run check && npm run render -- --check && npm test"
+  },
+  "license": "MIT",
+  "author": "sakikoTGW",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakikoTGW/dsh-plugins.git"
+  }
+}
