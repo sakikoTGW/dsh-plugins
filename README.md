@@ -32,7 +32,7 @@
 
 | 插件 | 一句话 | 安装 | 状态 |
 | --- | --- | --- | --- |
-| [dsh-plugin-resolver](https://github.com/sakikoTGW/dsh-plugin-resolver) | 一次工具调用把插件装对：搜目录、同名消歧、按当前内核选兼容版本、装完校验 | `dsh plugin --profile <profile> add dsh-plugin-resolver` | ✅ 可用 · 0.1.2 |
+| [dsh-plugin-resolver](https://github.com/sakikoTGW/dsh-plugin-resolver) | 一次工具调用把插件装对：搜目录、同名消歧、按当前内核选兼容版本、装完校验 | `dsh plugin --profile <profile> add dsh-plugin-resolver` | ✅ 可用 · 0.1.3 |
 <!-- catalog:end -->
 
 > 表由 `catalog.json` 生成、CI 校验两者一致；兼容范围、CHANGELOG、Issue 在各自仓库。`dsh-element-picker` 的独立仓库还在整理：反馈先走本仓库 Issue，版本以 npm 包页为准。

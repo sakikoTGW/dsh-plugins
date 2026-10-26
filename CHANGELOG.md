@@ -6,6 +6,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `catalog.json`：`dsh-plugin-resolver` 版本升到 `0.1.3`（对应 npm `latest` 与 GitHub Release `v0.1.3`）。
+
 ## [0.1.0] - 2026-10-27
 
 首个版本：索引 + 约定 + 反馈闭环。

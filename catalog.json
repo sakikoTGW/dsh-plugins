@@ -47,7 +47,7 @@
       "problem": "手工装插件要拉目录、猜同名来源、试版本、踩 npm 超时，最后还不知道装没装上；agent 侧约 45 步、20 分钟以上。",
       "repo": "https://github.com/sakikoTGW/dsh-plugin-resolver",
       "npm": "dsh-plugin-resolver",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "install": "dsh plugin --profile <profile> add dsh-plugin-resolver",
       "engines": {
         "dsh": ">=0.2.0-rc.2 <0.3.0",
