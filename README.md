@@ -25,7 +25,7 @@
 
 | 插件 | 一句话 | 安装 | 状态 |
 | --- | --- | --- | --- |
-| [dsh-element-picker](https://www.npmjs.com/package/dsh-element-picker) | 把元素、链接、文件路径变成输入框里的引用芯片，模型不用再猜「你说的是哪个」 | `dsh plugin --profile <profile> add dsh-element-picker` | ✅ 可用 · 0.2.1 |
+| [dsh-element-picker](https://github.com/sakikoTGW/dsh-element-picker) | 把界面元素、链接、文件路径一键变成原生引用芯片；支持 DSH 界面、同源 iframe、侧栏浏览器页面，点击芯片可回到原元素 | `dsh plugin --profile <profile> add dsh-element-picker` | ✅ 可用 · 0.10.3 |
 
 ### 安装与开发
 > 让装插件、改插件这件事少踩坑。

@@ -23,11 +23,11 @@
       "title": "元素 / 链接引用芯片",
       "category": "input",
       "status": "live",
-      "summary": "把元素、链接、文件路径变成输入框里的引用芯片，模型不用再猜「你说的是哪个」",
+      "summary": "把界面元素、链接、文件路径一键变成原生引用芯片；支持 DSH 界面、同源 iframe、侧栏浏览器页面，点击芯片可回到原元素",
       "problem": "想让模型改页面上某个按钮、引用某条链接或某个文件路径时，只能用一段文字去描述，模型经常指错地方。",
-      "repo": null,
+      "repo": "https://github.com/sakikoTGW/dsh-element-picker",
       "npm": "dsh-element-picker",
-      "version": "0.2.1",
+      "version": "0.10.3",
       "install": "dsh plugin --profile <profile> add dsh-element-picker",
       "engines": {
         "dsh": ">=0.2.0-rc.2 <0.3.0",
@@ -35,7 +35,7 @@
       },
       "license": "MIT",
       "since": "2026-10",
-      "feedback": "本仓库「维护请求」Issue（独立仓库开源后转到仓库 Issue）"
+      "feedback": "https://github.com/sakikoTGW/dsh-element-picker/issues"
     },
     {
       "id": "plugin-resolver",
