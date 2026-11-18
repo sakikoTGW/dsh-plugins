@@ -25,7 +25,7 @@
 
 | 插件 | 一句话 | 安装 | 状态 |
 | --- | --- | --- | --- |
-| [dsh-element-picker](https://github.com/sakikoTGW/dsh-element-picker) | 把界面元素、链接、文件路径一键变成原生引用芯片；支持 DSH 界面、同源 iframe、侧栏浏览器页面，点击芯片可回到原元素 | `dsh plugin --profile <profile> add dsh-element-picker` | ✅ 可用 · 0.10.3 |
+| [dsh-element-picker](https://github.com/sakikoTGW/dsh-element-picker) | 把界面元素、链接、文件路径变成原生引用卡片；DSH 界面 / 同源 iframe / 侧栏网页 / 自己的浏览器（伴随扩展）四通道一键可选，引用带状态、画面坐标和附近元素 | `dsh plugin --profile <profile> add dsh-element-picker` | ✅ 可用 · 0.11.1 |
 
 ### 安装与开发
 > 让装插件、改插件这件事少踩坑。
